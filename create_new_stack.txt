@@ -1,0 +1,11 @@
+https://colab.research.google.com/github/zenml-io/zenbytes/blob/main/2-1_Experiment_Tracking.ipynb#scrollTo=0OWDFHrNuSrn
+
+zenml integration install mlflow -y
+# Register the MLflow experiment tracker
+zenml experiment-tracker register mlflow_tracker --flavor=mlflow
+
+# Create a new stack that includes an MLflow experiment
+zenml stack register mlflow_exp_tracker_stack -a default -o default -e mlflow_tracker
+
+# Set the new stack as active
+zenml stack set mlflow_exp_tracker_stack
